@@ -345,7 +345,6 @@ ul { padding: 2px 0; }
     text-transform: capitalize;
     box-shadow: 0 -4px 10px -1px rgba(0, 0, 0, 0.2);
 }
-}
 
 ul.footer {
     margin-top: 16px;
@@ -490,7 +489,7 @@ ul.footer p { color: #ffffff; }
     margin-top: 20px;
     background: rgba(255, 255, 255, 1);
     padding: 20px;
-    border-bottom: 5px solid #F04F23;
+    border-bottom: 5px solid #000000;
 //    border-bottom: 5px solid #000000;
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
@@ -535,7 +534,7 @@ a img.branding-logo:hover { border-bottom: 5px solid #f48263; }
 .container .navbar-nav li > a:hover { font-size: 15px; font-weight: 600; color: #000000 !important; border-bottom: 5px solid transparent; z-index: 0;}
 
 .container .navbar-nav li.active > a {
-    background: #F04F23;
+    background: #000000;
     color: #ffffff !important;
 }
 
@@ -796,13 +795,13 @@ a img.branding-logo:hover { border-bottom: 5px solid #f48263; }
     }
 
     .container .navbar-nav li a:hover {
-        background-color: #F04F23 !important;
+        background-color: #000000 !important;
         color: #ffffff !important;
         border-bottom: none !important;
     }
 
     .container .navbar-nav li.active > a:hover {
-        background-color: #F04F23 !important;
+        background-color: #000000 !important;
         color: #ffffff !important;
         border-bottom: none !important;
     }
@@ -847,6 +846,6 @@ a img.branding-logo:hover { border-bottom: 5px solid #f48263; }
 }
 
 .navbar .container .navbar-nav.pull-left li ul li a:hover, .navbar .container-view .navbar-nav.pull-left li ul li a:hover {
-    color: #000000; background-color: #F04F23; border-bottom: 3px solid #000000; text-decoration: none;
+    color: #000000; background-color: #000000; border-bottom: 3px solid #000000; text-decoration: none;
 }
 /* Sub Navigation Hover */
