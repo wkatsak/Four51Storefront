@@ -125,7 +125,7 @@ ul.burgers .badge { color: #ffffff; }
     -o-transition: all .3s ease-in-out;
     -ms-transition: all .3s ease-in-out;
 }
-.fa-arrow-circle-up:hover:before { color: #F04F23 !important; }
+.fa-arrow-circle-up:hover:before { color: #000000 !important; }
 
 .fa-spinner::before { color: #000000 !important; }
 
@@ -195,7 +195,7 @@ ul.burgers .badge { color: #ffffff; }
 
 .nav-pills>li.active>a:hover {
     color: #ffffff;
-    background-color: #F04F23;
+    background-color: #000000;
 }
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus { border-radius: 40px; }
@@ -383,7 +383,7 @@ ul.footer li a:hover {
     visibility: hidden;
     display: block;
     content: '';
-    border-bottom: 2px solid #F04F23;
+    border-bottom: 2px solid #000000;
     transform: scaleX(0);
     transition: transform 250ms ease-in-out;
     transform-origin: 50% 50%; /*  100 - 50 left to right */
@@ -415,7 +415,7 @@ ul.footer li a:hover {
     visibility: hidden;
     display: block;
     content: '';
-    border-bottom: 2px solid #F04F23;
+    border-bottom: 2px solid #000000;
     transform: scaleX(0);
     transition: transform 250ms ease-in-out;
     transform-origin: 50% 50%; /*  100 - 50 left to right */
