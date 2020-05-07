@@ -185,7 +185,7 @@ ul.burgers .badge { color: #ffffff; }
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus {
     color: #ffffff;
-    background-color: #141a4c;
+    background-color: #C03;
     width: 100%;
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
@@ -539,12 +539,12 @@ a img.branding-logo:hover { border-bottom: 5px solid #f48263; }
 }
 
 .container .navbar-nav li a:hover {
-    background: #f26843;
+    background: #000000;
     color: #ffffff !important;
 }
 
 .container .navbar-nav li.active > a:hover {
-    background: #f26843;
+    background: #000000;
     color: #ffffff !important;
 }
 
@@ -789,7 +789,7 @@ a img.branding-logo:hover { border-bottom: 5px solid #f48263; }
     }
 
     .container .navbar-nav li.active > a {
-        background-color: #f26843 !important;
+        background-color: #000000 !important;
         color: #ffffff !important;
         border-bottom: none !important;
     }
@@ -807,7 +807,7 @@ a img.branding-logo:hover { border-bottom: 5px solid #f48263; }
     }
 
     .container .navbar-nav li.active > a:focus {
-        background-color: #f26843 !important;
+        background-color: #000000 !important;
         background: #ffffff;
         color: #ffffff !important;
         border-bottom: none !important;
