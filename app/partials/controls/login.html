@@ -1,10 +1,98 @@
+<style>
+    .order-cloud-image {
+        background-image: linear-gradient(to bottom, #ffffff, #ffffff, #eeeeee, #e5e5e5, #999999);
+    }
+
+    .order-cloud .form-signin {
+        max-width: 35em;
+        padding: 3.5em 1em 2em;
+        margin: 2em auto;
+        background: rgba(0,0,0,.07);
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        -o-border-radius: 6px;
+        -ms-border-radius: 6px;
+        border-radius: 6px;
+    //box-shadow: 1px 1px 1px rgba(216,241,251,.15);
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.06), 0 5px 20px rgba(0, 0, 0, 0.10) !important;
+    }
+
+    .order-cloud h2 {
+        margin-top: 10px;
+        -webkit-animation: none;
+        -moz-animation: none;
+        -o-animation: none;
+        -ms-animation: none;
+        animation: none;
+        color: #000000;
+        padding-top: 15px;
+        font-size: 2em;
+        left: 0;
+        position: absolute; /* position at top left of #containter to sync bg */
+        text-align: center;
+        top: 0;
+        width: 100%;
+    }
+
+    .order-cloud .form-signin .btn-info {
+        background-color: #cccccc;
+        color: #000000;
+        border: 1px solid #999999;
+        transition: all 0.3s;
+        -webkit-transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out;
+        -o-transition: all .5s ease-in-out;
+        -ms-transition: all .5s ease-in-out;
+        transition: all .5s ease;
+    }
+
+    .order-cloud .form-signin .btn-info:hover {
+        background-color: #dddddd;
+        color: #000000;
+        border-color: #999999;
+    }
+
+    .order-cloud .form-signin .btn-primary {
+        background-color: #39992b;
+        color: #ffffff;
+        border-color: #999999;
+        transition: all 0.3s;
+        -webkit-transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out;
+        -o-transition: all .5s ease-in-out;
+        -ms-transition: all .5s ease-in-out;
+        transition: all .5s ease;
+    }
+
+    .order-cloud .form-signin .btn-primary:hover {
+        background-color: #48c136;
+        color: #ffffff;
+        border-color: #48c136;
+    }
+
+    ::selection {
+        background: #101f47;
+        color: #ffffff;
+    }
+
+    ::-moz-selection {
+        background: #101f47;
+        color: #ffffff;
+    }
+</style>
+
 <div class="login">
-    <div class="order-cloud-image" style="background: url('css/images/orderCloud.jpg') center center fixed;"></div>
+    <div class="order-cloud-image"></div>
     <section class="order-cloud">
         <div id="login_box">
+            <div class="container-fluid">
+                <ul class="list-inline text-center">
+                    <li><img src="https://www.gotmoxie.com/assets/images/portal-logos/bohler-logo.jpg" class="img-responsive animated bounceIn" style="margin: 55px 0 25px 0;"></li>
+                </ul>
+            </div>
+
             <div id="login_form" class="animated bounceIn">
-                <form class="form-signin" ng-submit="login()" name="login_form">
-                    <h2 class="animated fadeIn text-center">{{'Four51 Storefront 2.0' | r}}</h2>
+                <form class="form-signin" ng-submit="login()" name="login_form"><h2 class="text-center ng-binding">{{'Online Storefront' | r}}</h2>
                     <p id="451qa_msg_login" ng-show="loginMessage" ng-bind-html="loginMessage" class="alert alert-info"></p>
                     <div>
                         <div class="view-form-icon" ng-show="!showEmailHelp && !PasswordReset && (loginMessage != 'Your password has expired and will need to be changed.')">
@@ -42,12 +130,12 @@
                                 <inlineerror ng-show="login_form.confirm_password.$error.match" title="{{'Password' | r}} do not match!" />
                             </div>
                         </div>
-                        <div>
-                            <p class="alert alert-info" ng-show="showEmailHelp && (!EmailNotFoundException || !PasswordSecurityException)">
-                                If you would like to be reminded of your {{'Username' | r}} or have the option to reset your {{'Password' | r}}, please provide your email address and your log on information will be emailed to you immediately.
+                        <div class="msg-alert-info">
+                            <p class="alert alert-info" style="background-color: #FFFFFF; border-color: #333333; color:#333333; margin-top: 25px;" ng-show="showEmailHelp && (!EmailNotFoundException || !PasswordSecurityException)">
+                                If you would like to be reminded of your Username or have the option to reset your Password, please provide your email address and your log on information will be emailed to you immediately.
                             </p>
                             <btn class="btn btn-info btn-block" ng-show="!showEmailHelp && !PasswordReset && !EmailNotFoundException && !PasswordSecurityException" ng-click="showEmailHelp = !showEmailHelp; buttonText = 'Submit'">
-                                Need help logging on?
+                                Need help logging  on OR is it your first time?
                             </btn>
                             <div class="view-form-icon" ng-show="showEmailHelp">
                                 <div>

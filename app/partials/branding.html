@@ -1,11 +1,108 @@
-<section class="jumbotron" ng-class="{'active': isActive('catalog')}" ng-show="user.Company.LogoUrl">
-    <div class="container">
-        <h2 class="thumbnail" ng-show="Four51User.isAuthenticated()">
-            <a href="catalog">
-                <img ng-src="{{user.Company.LogoUrl}}" />
+<div class="top-links">
+    <div class="center-content">
+        <div class="pull-right branding-links">
+            <a href="catalog"><i class="fa fa-home visible-xs"></i></a>
+            <a id="451qa_order_link" href="order" class="c-links no-decor">
+                <i class="fa fa-clipboard"></i>
+                <span class="hidden-xs">{{'Orders' | r | xlat}}</span>
             </a>
-            <span>{{user.Company.Name}}</span>
-            <homemessage />
-        </h2>
+            <a id="451qa_acct_link" href="admin" class="c-links no-decor">
+                <i class="fa fa-cog"></i>
+                <span class="hidden-xs">{{'Account' | r | xlat}}</span>
+            </a>
+            <a id="451qa_addy_link" ng-show="user.Type == 'Customer' && (user.Permissions.contains('CreateShipToAddress') || user.Permissions.contains('CreateBillToAddress'))" class="addresses c-links no-decor" href="addresses">
+                <i class="fa fa-cog"></i>
+                <span class="hidden-xs">{{'Addresses' | r | xlat}}</span>
+            </a>
+            <a ng-if="user.Type == 'Customer' && user.Permissions.contains('AdvancedReporting')" ng-class="{'active': isActive('reports')}" id="451qa_order_link" class="c-links no-decor" href="reports">
+                <i class="fa fa-bar-chart-o"></i>
+                <span class="hidden-xs">{{'Reports' | r | xlat}}</span>
+            </a>
+            <a id="451qa_cart_link" href="cart" class="c-links no-decor">
+                <i class="fa fa-shopping-cart"></i>
+                <span class="hidden-xs">{{'Cart' | r | xlat}}</span>
+            </a>
+            <a id="451qa_search_link" href="search" class="c-links no-decor">
+                <i class="fa fa-search"></i>
+                <span class="hidden-xs">{{'Search' | r | xlat}}</span>
+            </a>
+            <a href="#" ng-if="user.Type != 'TempCustomer'"  class="451_btn_logout c-links no-decor" ng-click="Logout()">
+                <i class="fa fa-sign-out"></i>
+                <span class="hidden-xs">{{'Log Out' | r | xlat}}</span>
+            </a>
+            <a href="admin" ng-if="user.Type == 'TempCustomer'"  class="451_btn_logout c-links no-decor">
+                <i class="fa fa-sign-in"></i>
+                <span class="hidden-xs">{{'Log In' | r | xlat}}</span>
+            </a>
+        </div>
     </div>
-</section>
+</div>
+
+<div class="center-content branding-div-bohler">
+    <div class="row">
+        <div class="pull-left logo-holder">
+            <a ng-click="refreshUser()" href="catalog">
+                <img ng-src="{{user.Company.LogoUrl}}" class="image-responsive branding-logo animated fadeInDown">
+                <!-- <img src="https://www.four51.com/Images/Product/88e0d32fa507447c89e6e6961937b28d.png" class="image-responsive branding-logo animated fadeInDown"> -->
+            </a>
+        </div><!-- OLD NAV GOES HERE -->
+    </div>
+</div>
+
+<div class="bottom-links">
+
+    <div class="center-content">
+        <header class="header navbar navbar-inner desktop-navigation">
+            <nav tolerance='20' offset='200' class="navbar navbar-default" role="navigation" headroom>
+                <section>
+                    <div class="container center-content" style="height: 2px">
+                        <ul class="nav navbar-nav pull-left">
+                            <li class="products" ng-class="{'active': isActive('catalog')}">
+                                <a id="451qa_home_link" ng-show="Four51User.isAuthenticated()" href="catalog">
+                                    <i class="fa fa-home visible-xs"></i>
+                                    <span class="hidden-xs">{{'Home' | rc | xlat}}</span>
+                                </a>
+                            </li>
+                            <li ng-repeat="t in tree" ng-class="{'active': isInPath('{{t.InteropID}}'),'dropdown': t.SubCategories.length > 0}">
+                                <a ng-if="t.SubCategories.length > 0" href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="false">{{t.Name}}<b class="caret"></b></a>
+                                <a ng-if="t.SubCategories.length == 0" href="catalog/{{t.InteropID}}">{{t.Name}}</a>
+                                <ul ng-if="t.SubCategories.length > 0" class="dropdown-menu">
+                                    <li><a href="catalog/{{t.InteropID}}">All {{t.Name}}</a></li>
+
+                                    <div ng-repeat="sc in t.SubCategories">
+                                        <ul>
+                                            <li class="subcategory">
+                                                <a href="catalog/{{sc.InteropID}}" >{{sc.Name}}</a>
+                                                <ul ng-if="sc.SubCategories.length > 0">
+                                                    <li ng-repeat="ssc in sc.SubCategories" class="subcategory">
+                                                        <a href="catalog/{{ssc.InteropID}}" >{{ssc.Name}}</a>
+                                                        <ul ng-if="ssc.SubCategories.length > 0">
+                                                            <li ng-repeat="sssc in ssc.SubCategories" class="subcategory">
+                                                                <a href="catalog/{{sssc.InteropID}}" >{{sssc.Name}}</a>
+                                                                <ul ng-if="sssc.SubCategories.length > 0">
+                                                                    <li ng-repeat="ssssc in sssc.SubCategories" class="subcategory">
+                                                                        <a href="catalog/{{ssssc.InteropID}}" >{{ssssc.Name}}</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="pull-right mc hidden-large-down">
+                            <minicart></minicart>
+                        </div>
+                    </div>
+                </section>
+            </nav>
+        </header>
+
+    </div>
+</div>
+
+<div class="site-stripe-bottom"></div>

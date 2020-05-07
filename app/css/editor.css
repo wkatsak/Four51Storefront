@@ -1,1 +1,103 @@
-/*do not make changes to this file. It will be overwritten by the css editor. Put theme changes in custom.css*/
+.btn-warning, .btn-warning:hover, .btn-warning:focus { background-color: #f5e84f !important; color: #000000 !important; border-color: #f5e84f !important; }
+.btn-warning:hover { background-color: #f8ef80; }
+
+.btn-create, .btn-create:hover, .btn-create:focus, .panel-order-history>a { background-color: #1b9b3e; color: #ffffff; }
+.btn-create:hover, .panel-order-history>a:hover { background-color: #23c650; }
+
+.input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group { border: 0 !important; background-color: #1b9b3e !important; }
+.input-group-btn:last-child>.btn:hover, .input-group-btn:last-child>.btn-group:hover { border: 0 !important; background-color: #23c650 !important; }
+
+.container .navbar-nav li.active a:hover  {background-color: #F04F23;}
+.container .navbar-nav li.active a:focus  {background-color: #F04F23;}
+
+.navbar-default .navbar-nav .open > a  {background-color: #101F47;}
+.navbar-default .navbar-nav .open > a:hover  {background-color: #193171;}
+.navbar-default .navbar-nav .open > a:focus  {background-color: #101F47;}
+
+.navbar-nav li.dropdown li > a:hover  {background-color: #193171;}
+.navbar-nav li.dropdown li > a:focus  {background-color: #101F47;}
+.navbar .container .navbar-nav li.active .fa-caret-down  {color: #101F47;}
+.navbar-nav li.dropdown li > a  {color: #333333;}
+.navbar-nav li.dropdown li > a:hover  {color: #000000;}
+
+.navbar .container .navbar-nav.pull-right li a i:first-of-type  {border-color: #000000;}
+
+.badge  {background-color: #000000;}
+.badge  {color: #FFFFFF;}
+
+.navbar-default  {background-color: #FFFFFF;}
+
+.container .navbar-nav li a  {color: #000000;}
+.container .navbar-nav li.active > a  {background-color: #101F47;}
+.container .navbar-nav li.active > a  {color: #000000;}
+.navbar-default, .dropdown-mega  {border-color: #FFFFFF;}
+
+body  {background-color: #FFFFFF;}
+body  {color: #000000;}
+
+.text-primary  {color: #0c2a3a;}
+.text-info  {color: #000000;}
+
+/*body a  {color: #F9A145;} */
+
+.btn-primary, .btn-primary:hover, .btn-primary:focus { background-color: #00acdc; color: #FFFFFF; }
+.btn-primary  {background-color: #00acdc;}
+.btn-primary, .btn-primary:hover  {color: #ffffff;}
+.btn-primary  {border-color: #000000;}
+.btn-primary:hover  {background-color: #00c7fe;}
+
+.btn-default:hover, .btn-default:focus { background-color: #193171 !important; color: #FFFFFF; }
+.btn-default  {background-color: #101F47;}
+//.btn-default, .btn-default:hover  {color: #ffffff;}
+.btn-default  {border-color: #000000;}
+//.btn-default:hover  { border-color: #000000; background-color: #193171; }
+
+.btn-info  {background-color: #101F47; !important}
+.btn-info, .btn-info:hover  {color: #FFFFFF; !important}
+.btn-info  {border-color: #000000; !important}
+.btn-info:hover  {background-color: #193171; !important}
+
+.btn-success  {background-color: #449d44; color: #FFFFFF; !important}
+.btn-success  {border-color: #4CAE4C; !important}
+.btn-success:hover  {background-color: #5CB85C; !important}
+
+.btn-warning  {background-color: #f0ad4e; !important}
+.btn-warning, .btn-warning:hover  {color: #FFFFFF; !important}
+.btn-warning  {border-color: #EEA236; !important}
+.btn-warning:hover  {background-color: #ED9C28; !important}
+
+.btn-danger  {background-color: #D9534F; !important}
+.btn-danger, .btn-danger:hover  {color: #FFFFFF; !important}
+.btn-danger  {border-color: #D43F3A; !important}
+.btn-danger:hover  {background-color: #D2322D; !important}
+
+.jumbotron  {background-color: #FFFFFF;}
+h2 .jumbotron  {color: #000000;}
+
+.panel-primary .panel-heading .panel-title  {background-color: #f5f5f5; }
+.panel-primary .panel-heading .panel-title  {color: #333333;}
+
+.panel-primary { border: 1px solid #f5f5f5; }
+
+.panel-default .panel-heading .panel-title  {background-color: #f5f5f5; border: 1px solid #f5f5f5; }
+.panel-default .panel-heading .panel-title  {color: #333333;}
+
+.panel  {background-color: #FFFFFF;}
+.panel-footer  {background-color: #FFFFFF;}
+.panel-category-list .well  {background-color: #FFFFFF;}
+.panel-category-list .well h5  {color: #333333;}
+.panel-category-list .well  {border-color: #F0F0F0;}
+.panel-product-list .well  {background-color: #FFFFFF;}
+.panel-product-list .well  {color: #333333;}
+.panel-product-list .well  {border-color: #F0F0F0;}
+
+.btn-warning, .btn-warning:hover, .btn-warning:focus,
+.btn-create, .btn-create:hover, .btn-create:focus,
+.btn-default, .btn-default:hover, .btn-default:focus,
+.btn-primary, .btn-primary:hover, .btn-primary:focus,
+.btn-info, .btn-info:hover, .btn-info:focus,
+.btn-success, .btn-success:hover, .btn-success:focus,
+.btn-warning, .btn-warning:hover, .btn-warning:focus,
+.btn-danger, .btn-danger:hover, .btn-danger:focus { outline: none !important; border: none; border-radius: 25px; }
+
+.btn-danger, .btn-danger:hover, .btn-danger:focus { border-radius: 0 !important; }
