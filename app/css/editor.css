@@ -7,16 +7,16 @@
 .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group { border: 0 !important; background-color: #1b9b3e !important; }
 .input-group-btn:last-child>.btn:hover, .input-group-btn:last-child>.btn-group:hover { border: 0 !important; background-color: #23c650 !important; }
 
-.container .navbar-nav li.active a:hover  {background-color: #F04F23;}
-.container .navbar-nav li.active a:focus  {background-color: #F04F23;}
+.container .navbar-nav li.active a:hover  {background-color: #000000;}
+.container .navbar-nav li.active a:focus  {background-color: #000000;}
 
-.navbar-default .navbar-nav .open > a  {background-color: #101F47;}
+.navbar-default .navbar-nav .open > a  {background-color: #C03;}
 .navbar-default .navbar-nav .open > a:hover  {background-color: #193171;}
-.navbar-default .navbar-nav .open > a:focus  {background-color: #101F47;}
+.navbar-default .navbar-nav .open > a:focus  {background-color: #C03;}
 
 .navbar-nav li.dropdown li > a:hover  {background-color: #193171;}
-.navbar-nav li.dropdown li > a:focus  {background-color: #101F47;}
-.navbar .container .navbar-nav li.active .fa-caret-down  {color: #101F47;}
+.navbar-nav li.dropdown li > a:focus  {background-color: #C03;}
+.navbar .container .navbar-nav li.active .fa-caret-down  {color: #C03;}
 .navbar-nav li.dropdown li > a  {color: #333333;}
 .navbar-nav li.dropdown li > a:hover  {color: #000000;}
 
@@ -28,7 +28,7 @@
 .navbar-default  {background-color: #FFFFFF;}
 
 .container .navbar-nav li a  {color: #000000;}
-.container .navbar-nav li.active > a  {background-color: #101F47;}
+.container .navbar-nav li.active > a  {background-color: #C03;}
 .container .navbar-nav li.active > a  {color: #000000;}
 .navbar-default, .dropdown-mega  {border-color: #FFFFFF;}
 
@@ -47,12 +47,12 @@ body  {color: #000000;}
 .btn-primary:hover  {background-color: #00c7fe;}
 
 .btn-default:hover, .btn-default:focus { background-color: #193171 !important; color: #FFFFFF; }
-.btn-default  {background-color: #101F47;}
+.btn-default  {background-color: #C03;}
 //.btn-default, .btn-default:hover  {color: #ffffff;}
 .btn-default  {border-color: #000000;}
 //.btn-default:hover  { border-color: #000000; background-color: #193171; }
 
-.btn-info  {background-color: #101F47; !important}
+.btn-info  {background-color: #C03; !important}
 .btn-info, .btn-info:hover  {color: #FFFFFF; !important}
 .btn-info  {border-color: #000000; !important}
 .btn-info:hover  {background-color: #193171; !important}
