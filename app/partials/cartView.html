@@ -138,14 +138,11 @@
                                         <span ng-show="!item.toggleSpecs"><i class="fa fa-plus-circle"></i> {{('Show' | r) + ' ' + ('Specification' | r) | xlat}}</span>
                                         <span ng-show="item.toggleSpecs"><i class="fa fa-minus-circle"></i> {{('Hide' | r) + ' ' + ('Specification' | r) | xlat}}</span>
                                     </button>
-                                </span>
-                                <button ng-if="!item.Variant.IsMpowerVariant" type="button" class="btn btn-default" ng-show="item.SpecsLength > 0" ng-click="item.toggleSpecs = !item.toggleSpecs">
-                                    <span ng-show="!item.toggleSpecs"><i class="fa fa-plus-circle"></i> {{('Show' | r) + ' ' + ('Specification' | r) | xlat}}</span>
-                                    <span ng-show="item.toggleSpecs"><i class="fa fa-minus-circle"></i> {{('Hide' | r) + ' ' + ('Specification' | r) | xlat}}</span>
-                                </button>
-                                <ul ng-show="item.toggleSpecs == true" class="list-group">
+                                </span><br>
+                                <p style="margin: 0 0 5px 25px; padding: 0;"><strong>Item Specifications</strong></p>
+                                <ul class="list-group" style="margin-left: 25px;">
                                     <li ng-repeat="spec in item.Specs | filter:{'CanSetForLineItem':true} " class="list-group-item">
-                                        <span class="text-info">{{spec.Label || spec.Name}}: </span>
+                                        <span class="text-info"><strong>{{spec.Label || spec.Name}}: </strong></span>
                                         <span ng-if="spec.ControlType == 'File'"><a ng-href="{{spec.File.Url}}">{{spec.File.OriginalName + Extension}}</a></span></span>
                                         <span ng-if="spec.ControlType != 'File'">{{spec.Value || ('(unspecified)' | xlat)}}</span>
                                     </li>
@@ -157,7 +154,7 @@
                 <div class="panel-footer">
                     <div class="row">
                         <div class="col-md-4 col-lg-3">
-                            <giftcardredemption ng-if="user.Permissions.contains('ViewPromotions')" />
+                            <!-- <giftcardredemption ng-if="user.Permissions.contains('ViewPromotions')" /> -->
                         </div>
                         <div class="col-md-3 col-md-offset-5 col-lg-4 text-right" ng-if="!(user.Permissions.contains('HidePricing'))">
                             <h4 class="text-primary">

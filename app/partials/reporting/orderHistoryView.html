@@ -23,7 +23,7 @@
                         <orderhistorysummary ng-if="!(user.Permissions.contains('HidePricing'))"></orderhistorysummary>
                     </div>
                     <div class="panel-footer" ng-if="order.FromUserID == user.ID && order.Status != 'Unsubmitted'">
-                        <button ng-disabled="currentOrder" class="btn btn-primary pull-right" ng-click="repeatOrder()">
+                        <button ng-disabled="currentOrder" class="btn btn-create pull-right" ng-click="repeatOrder()">
                             <i ng-show="currentOrder" class="fa fa-warning"></i>
                             {{('Repeat' | r) + ' ' + ('Order' | r) | xlat}}
                         </button>
@@ -31,7 +31,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-8 col-md-pull-4">
+        <div class="col-md-8 col-md-pull-4" style="border: 1px solid #cccccc;">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title panel-primary">
@@ -39,25 +39,46 @@
                     </h3>
                 </div>
                 <lineitemhistorygrid />
+                <hr class="grad" ng-show="item.SpecsLength > 0">
 
-				<div class="panel-body" ng-show="shipments" ng-repeat="s in shipments">
-					<b>Shipper:</b> {{s.Shipper}}<br/>
-					<b>Tracking number:</b> {{s.TrackingNumber}}<br/>
-					<b>URL:</b> <a href="{{s.TrackingURL}}">{{s.TrackingURL}}</a><br>
-					<b>Items: </b> <ul><li ng-repeat="item in s.Items">{{item.ProductID}} - {{item.QuantityShipped}}</li></ul>
-					<hr>
-				</div>
+                <div class="panel-body" ng-show="shipments" ng-repeat="s in shipments">
+                    <div ng-if="s.Shipper.includes('UPS')">
+                        <i class="fa fa-truck" aria-hidden="true"></i> <strong>Shipper:</strong> {{s.Shipper}}<br/>
+                        <strong>Tracking number:</strong> {{s.TrackingNumber}}<br/>
+                        <strong>URL:</strong> <a href="https://wwwapps.ups.com/tracking/tracking.cgi?accept_UPS_license_agreement=yes&tracknum={{s.TrackingNumber}}" target="blank" title="Opens window in a new tab!" style="font-weight: bold; color: #00483a">Track your {{s.Shipper}} shipment - {{s.TrackingNumber}}</a><br/>
+                        <strong>Items:</strong> <span style="margin:0;padding:0;" ng-repeat="item in s.Items">{{item.ProductID}} <br /><strong>Quantity Shipped:</strong> {{item.QuantityShipped}}</span>
+                        <span ng-if="spec.ControlType == 'File'">{{spec.File.OriginalName + Extension}}</span>
+                        <span ng-show="item.Variant.LargeImageUrl || item.Product.SmallImageUrl">{{item.Variant.LargeImageUrl || item.Product.SmallImageUrl}}</span>
+                        <span ng-if="spec.ControlType != 'File'">{{spec.Value || ('(unspecified)' | xlat)}}</span>
+                    </div><br />
 
+                    <div ng-if="s.Shipper.includes('FedEx')">
+                        <i class="fa fa-truck" aria-hidden="true"></i> <strong>Shipper:</strong> {{s.Shipper}}<br/>
+                        <strong>Tracking number:</strong> {{s.TrackingNumber}}<br/>
+                        <strong>URL:</strong> <a href="https://www.fedex.com/apps/fedextrack/index.html?action=track&tracknumbers={{s.TrackingNumber}}&locale=en_US&cntry_code=en" target="blank" title="Opens window in a new tab!" style="font-weight: bold; color: #00483a">Track your {{s.Shipper}} shipment - {{s.TrackingNumber}}</a><br/>
+                        <strong>Items:</strong> <span style="margin:0;padding:0;" ng-repeat="item in s.Items">{{item.ProductID}} <br /><strong>Quantity Shipped:</strong> {{item.QuantityShipped}}</span>
+                        <span ng-if="spec.ControlType == 'File'">{{spec.File.OriginalName + Extension}}</span>
+                        <span ng-show="item.Variant.LargeImageUrl || item.Product.SmallImageUrl">{{item.Variant.LargeImageUrl || item.Product.SmallImageUrl}}</span>
+                        <span ng-if="spec.ControlType != 'File'">{{spec.Value || ('(unspecified)' | xlat)}}</span>
+                    </div><br />
 
+                    <div ng-if="s.Shipper == 'Local Delivery'">
+                        <i class="fa fa-truck" aria-hidden="true"></i> <strong>Shipper:</strong> Local Delivery<br/>
+                        <strong>Items:</strong> <span style="margin:0;padding:0;" ng-repeat="item in s.Items">{{item.ProductID}} <br /><strong>Quantity Shipped:</strong> {{item.QuantityShipped}}</span>
+                        <span ng-if="spec.ControlType == 'File'">{{spec.File.OriginalName + Extension}}</span>
+                        <span ng-show="item.Variant.LargeImageUrl || item.Product.SmallImageUrl">{{item.Variant.LargeImageUrl || item.Product.SmallImageUrl}}</span>
+                        <span ng-if="spec.ControlType != 'File'">{{spec.Value || ('' | xlat)}}</span>
+                    </div><br />
+                </div>
 
                 <div class="panel-footer" ng-if="order.FromUserID == user.ID && order.Status != 'Unsubmitted' && user.Type !='TempCustomer'">
-                   <loadingindicator ng-show="displayLoadingIndicator" />
-                   <div class="form-group view-form-icon">
+                    <loadingindicator ng-show="displayLoadingIndicator" />
+                    <div class="form-group view-form-icon">
                         <div class="input-group">
                             <input type="text" ng-model="order.FavoriteName" placeholder="{{('Favorite' | r) + ' ' + ('Name' | r) | xlat}}" class="form-control" autocomplete="off" />
                             <i class="fa fa-star"></i>
                             <span class="input-group-btn">
-                                <button type="button" ng-click="saveFavorite()" class="btn btn-info">{{('Save' | r) + ' ' + ('Favorite' | r) | xlat}}</button>
+                                <button type="button" ng-click="saveFavorite()" class="btn btn-create">{{('Save' | r) + ' ' + ('Favorite' | r) | xlat}}</button>
                             </span>
                         </div>
                     </div>
@@ -68,7 +89,7 @@
                         <div class="pull-right">
                             <loadingindicator  ng-show="currentLoadingIndicator" />
                             <i class="fa fa-icon-random"></i>
-                            <button ng-if="order.ID != currentOrder.ID" type="button" ng-click="currentLoadingIndicator = true; setCurrent()" class="btn btn-info">
+                            <button ng-if="order.ID != currentOrder.ID" type="button" ng-click="currentLoadingIndicator = true; setCurrent()" class="btn btn-create">
                                 {{'Set as Current' | r}} {{'Order' | r}}
                             </button>
                         </div>

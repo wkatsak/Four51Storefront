@@ -12,6 +12,7 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="col-md-12 col-collapse">
 			<div class="panel panel-default panel-kit">
 				<div class="panel-heading">
@@ -98,11 +99,6 @@
 							<div class="panel-title col-xs-9" ng-show="ActiveKitItem.Variant.IsDefaultVariant && LineItem.Product.VariantCount > 0">
 								<h4 class="text-info">
 									{{'Select a Variant' | r | xlat}}
-								</h4>
-							</div>
-							<div class="panel-title" ng-show="ActiveKitItem.Variant.IsDefaultVariant" ng-class="{'col-xs-3 text-right':LineItem.Product.VariantCount > 0,'col-xs-9':!LineItem.Product.VariantCount > 0}">
-								<h4>
-									<a ng-href="kit/{{Kit.KitParent.InteropID}}/{{kitIndex}}/{{ActiveKitItem.LineItem.Product.InteropID}}">Create New</a>
 								</h4>
 							</div>
 						</div>

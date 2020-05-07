@@ -14,10 +14,9 @@
     </div>
     <div class="col-sm-8 text-left">
         <div class="panel-body">
-            <h3>{{LineItem.Product.Name}}
-                <small class="pull-right text-info">{{LineItem.Product.ExternalID}}</small>
-            </h3>
-            <p ng-bind-html="trustedDescription(LineItem.Product)" ng-show="LineItem.Product.Description" />
+            <h3>{{LineItem.Product.Name}}</h3>
+            <small class="pull-left text-success">{{LineItem.Product.ExternalID}}</small><br>
+            <p ng-bind-html="trustedDescription(LineItem.Product)" ng-show="LineItem.Product.Description" /><br>
             <section class="hidden-xs hidden-sm panel-body">
                 <p ng-show="LineItem.PriceSchedule.PriceBreaks[0]" ng-if="!(user.Permissions.contains('HidePricing'))">
                     {{LineItem.PriceSchedule.PriceBreaks[0].Quantity}}

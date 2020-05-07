@@ -6,6 +6,8 @@
             {{item.ProductIDText}}
         </h3>
         <span>{{item.Product.Name}}</span>
+        <span ng-show="item.Product.QuantityMultiplier == 1">  x {{item.Quantity}}</span>
+        <span ng-show="item.Product.QuantityMultiplier > 1" >  x {{item.Product.QuantityMultiplier * item.Quantity}}</span>
         <ul ng-show="item.Specs | filter:{'CanSetForLineItem':true}.length > 0">
             <li class="text-center" ng-repeat="spec in item.Specs | onproperty:{Property: 'CanSetForLineItem', Value: true} ">
                 <span class="text-info">{{spec.Name}}</span>
@@ -13,7 +15,7 @@
                 <span ng-if="spec.ControlType != 'File'">{{spec.Value || ('(unspecified)' | xlat)}}</span>
             </li>
         </ul>
-        <a ng-if="item.ProductionURL" class="btn btn-primary printable-pdf-link" href="{{item.ProductionURL}}" target="_blank">
+        <a ng-if="item.ProductionURL" class="btn btn-create printable-pdf-link" href="{{item.ProductionURL}}" target="_blank">
             <span><i class="fa fa-download"></i> {{'Download Printable File' | r | xlat}}</span>
         </a>
     </div>
