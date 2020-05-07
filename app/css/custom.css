@@ -119,7 +119,7 @@ ul.burgers .badge { color: #ffffff; }
 /* Hamburger Menu Text Color */
 
 .fa-arrow-circle-up:before {
-    color: #101f47;
+    color: #C03;
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
     -o-transition: all .3s ease-in-out;
@@ -307,14 +307,14 @@ ul { padding: 2px 0; }
     height: 50px;
     padding-top: 12px !important;
     padding-right: 15rem;
-    background-color: #101f47;
+    background-color: #C03;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     z-index: 99;
 }
 
 .bottom-links {
     height: 61px;
-    background-color: #101f47;
+    background-color: #C03;
     box-shadow: 0 -10px 8px -7px rgba(0, 0, 0, 0.3), 0 10px 8px -7px rgba(0, 0, 0, 0.4);
     z-index: 99;
 }
@@ -334,7 +334,7 @@ ul { padding: 2px 0; }
 
 #footer {
     z-index: 2;
-    background-color: #101f47;
+    background-color: #C03;
     height: 50px;
     bottom: 0;
     width: 100%;
